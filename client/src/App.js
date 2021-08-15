@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
-
+import { Form, Posts } from './components';
 
 import memories from './images/memories.png';
 
