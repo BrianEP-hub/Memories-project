@@ -11,12 +11,12 @@ env.config();
 
 const app = express();
 
-
+app.use(cors());
 app.use('/posts', postRoutes);
 
 app.use(bodyParser.json({limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
-app.use(cors());
+
 
 
 const CONNECTION_URL = `mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@cluster0.xtk9h.mongodb.net/${process.env.MONGO_DB_DATABASE}?retryWrites=true&w=majority`;
