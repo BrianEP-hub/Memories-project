@@ -1,22 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { Container} from '@material-ui/core';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import { getPosts } from './actions/posts';
-import { Form, Posts } from './components';
+import {  Navbar, Home, Auth } from './components';
 
-import memories from './images/memories.png';
-import useStyles from './styles';
+
 
 const App = () => {
-    const [ currentId, setCurrentId ] = useState(null);
-    const classes = useStyles();
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getPosts());
-    }, [currentId, dispatch]);
+   
     return (
+<<<<<<< Updated upstream
         <Container maxwidth="lg">
             <AppBar className={classes.appBar} position="static" color="inherit">
                 <Typography className={classes.heading} variant="h2" align="center">Memories</Typography>
@@ -35,6 +28,18 @@ const App = () => {
                 </Container>
             </Grow>
         </Container>
+=======
+        <BrowserRouter>
+             <Container maxwidth="lg">
+                    <Navbar />   
+                    <Switch>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/auth" exact component={Auth} />
+                    </Switch>
+             </Container>
+        </BrowserRouter>
+        
+>>>>>>> Stashed changes
     )
 }
 
